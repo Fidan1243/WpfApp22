@@ -13,7 +13,7 @@
                 <StackPanel>
                     
             <Button Command="{Binding InsertCommand}" FontSize="30" Width="200" Margin="10" HorizontalAlignment="Left">Insert Card</Button>
-            <TextBox FontSize="20" Width="240" HorizontalAlignment="Left" Margin="10" Text="{Binding CardNumber}" IsEnabled="{Binding InsertE}"></TextBox>
+            <TextBox FontSize="20" Width="240" HorizontalAlignment="Left" Margin="10" Text="{Binding CardNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" IsEnabled="{Binding InsertE}"></TextBox>
                 </StackPanel>
                 <StackPanel Width="230">
                     <TextBlock></TextBlock>
@@ -24,11 +24,11 @@
             <StackPanel Margin="0,20" Orientation="Horizontal">
                 <StackPanel Margin="0,40" Width="250">
                     <Button Command="{Binding LoadCommand}" FontSize="30" Margin="10">Load Data</Button>
-                    <TextBox FontSize="30" Margin="10,30" IsEnabled="{Binding TransferE}"></TextBox>
+                    <TextBox FontSize="30" Margin="10,30" Text="{Binding MoneyMinus}" IsEnabled="{Binding TransferE}"></TextBox>
                 </StackPanel>
                 <StackPanel>
                     <TextBox Text="{Binding CFullname}" FontSize="30" Margin="10" IsEnabled="False"></TextBox>
-                    <TextBox Text="{Binding Customer.Money}" FontSize="30" Margin="10" Width="200" IsEnabled="False"></TextBox>
+                    <TextBox Text="{Binding Money,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" FontSize="30" Margin="10" Width="200" IsEnabled="False"></TextBox>
                     <Button Command="{Binding TransferCommand}" Margin="10" FontSize="30">Transfer money</Button>
                 </StackPanel>
             </StackPanel>
